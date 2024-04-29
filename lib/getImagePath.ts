@@ -1,7 +1,7 @@
 const getImagePath = (imagePath?: string, fullSize?: boolean) => {
     return imagePath
     ? `https://image.tmdb.org/t/p/${fullSize ? "original" : "w500"}/${imagePath}`
-    : "https://placehold.co/600x400?text=No+Image"
+    : "https://knetic.org.uk/wp-content/uploads/2020/07/Pcture-Placeholder.png"
 }
 
 export default getImagePath;

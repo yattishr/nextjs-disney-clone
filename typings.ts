@@ -9,7 +9,7 @@ export type Genres = {
 
 export type SearchResults = {
     page: number;
-    results: Movie;
+    results: Movie[];
     total_pages: number;
     total_results: number;
 }
