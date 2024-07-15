@@ -1,3 +1,5 @@
+// https://func-disney-clone.azurewebsites.net/api/getaisuggestion
+
 import {
   app,
   HttpRequest,
@@ -11,7 +13,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function getAISuggestion(
+async function getAISuggestion(
   request: HttpRequest,
   context: InvocationContext
 ): Promise<HttpResponseInit> {
@@ -38,7 +40,7 @@ export async function getAISuggestion(
   return { body: completion.choices[0].message.content || "No suggestions." };
 }
 
-app.http("getAISuggestion", {
+export default app.http("getAISuggestion", {
   methods: ["GET"],
   authLevel: "anonymous",
   handler: getAISuggestion,
